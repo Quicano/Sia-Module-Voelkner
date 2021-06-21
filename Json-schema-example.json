@@ -1,0 +1,25 @@
+{
+   "$id": "https://example.com/person.schema.json",
+   "$schema": "http://json-schema.org/draft-07/schema#",
+   "description": "Das Schema dient der korrekten Extraction von Metadaten aus den vorgegebenen Papern",
+   "title": "Person",
+   "type": "object",
+   "properties": {
+         "ppn": {
+            "type": "string",
+            "description": "Der Titel des Papers"
+         },
+         "title": {
+            "type": "array",
+            "description": "Quellentyp und Titel",
+            "items": {
+               "type": "object",
+                "properties": {
+                  "source": {"enum": ["pdf", "html", "txt", "bibtex"]},
+                  "title": {"type": "string"}
+                }
+            }
+         }
+   },
+   "required": ["ppn"]
+}

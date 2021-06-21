@@ -1,0 +1,19 @@
+{
+  "PathToTempDir" : "tempDir",
+  "DocumentRootDir" : "documentation/samples/input-examples/https-www-phon-ucl-ac-uk/047006471",
+  "sources" : [
+    {
+      "id" : "047006471",
+      "type" : "pdf",
+      "split" : false,
+      "extractorConfig" : {
+        "authorHeight" :18,
+        "authorFont" :5,
+        "titleHeight" :32,
+        "titleFont" :2,
+        "pageHeight" :18,
+        "pageFont" :5
+      }
+    }
+  ]
+}
