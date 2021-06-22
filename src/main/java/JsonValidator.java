@@ -35,5 +35,4 @@ public class JsonValidator {
         System.out.println(jsonObject.get("title"));
     }
 
-
 }
