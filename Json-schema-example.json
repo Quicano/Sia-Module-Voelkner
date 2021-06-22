@@ -5,99 +5,171 @@
    "title": "Person",
    "type": "object",
    "properties": {
-         "ppn": {"$ref": "#/definitions/non-empty-string",
-           "description": "Der Titel des Papers"
-         },
-         "title": {
-            "type": "array",
-            "minItems": 0,
-            "maxItems": 4,
-            "description": "Quellentyp und Titel",
-            "items": {
-                "type": "object",
-                "properties": {
-                    "source": {"enum": ["pdf", "html", "txt", "bibtex"]},
-                    "title": {"type": "string"}
-                }
-            }
-         },
-
-         "volume": {
-           "type": "array",
-           "minItems": 0,
-           "maxItems": 4,
-           "description": "Quellentyp und Volumen",
-           "items": {
-             "type": "object",
-             "properties": {
-               "source": {"enum": ["pdf", "html", "txt", "bibtex"]},
-               "title": {"type": "string"}
-             }
-           }
-         },
-
-         "pages": {
-           "type": "array",
-           "minItems": 0,
-           "maxItems": 4,
-           "description": "Quellentyp und Seiten",
-           "items": {
-             "type": "object",
-             "properties": {
-               "source": {"enum": ["pdf", "html", "txt", "bibtex"]},
-               "title": {"type": "string"}
-             }
+     "ppn": {
+       "$ref": "#/definitions/non-empty-string",
+       "description": "Der Titel des Papers"
+     },
+     "title": {
+       "type": "array",
+       "minItems": 0,
+       "maxItems": 4,
+       "description": "Quellentyp und Titel",
+       "items": {
+         "type": "object",
+         "properties": {
+           "source": {
+             "enum": [
+               "pdf",
+               "html",
+               "txt",
+               "bibtex"
+             ]
+           },
+           "title": {
+             "type": "string"
            }
          }
-        },
-
-        "year": {
-          "type": "array",
-          "minItems": 0,
-          "maxItems": 4,
-          "description": "Quellentyp und Erscheinungsjahr",
-          "items": {
-            "type": "object",
-            "properties": {
-              "source": {"enum": ["pdf", "html", "txt", "bibtex"]},
-              "title": {"type": "string"}
-            }
-          }
-        },
-
-        "creators": {
-          "type": "array",
-          "minItems": 0,
-          "maxItems": 4,
-          "description": "Quellentyp und Authoren",
-          "items": {
-            "type": "object",
-            "properties": {
-              "source": {"enum": ["pdf", "html", "txt", "bibtex"]},
-              "title": {"type": "string"}
-            }
-          }
-        },
-
-        "text_languages": {
-          "type": "array",
-          "minItems": 0,
-          "maxItems": 4,
-          "description": "Quellentyp und Sprache des Papers",
-          "items": {
-            "type": "object",
-            "properties": {
-              "source": {"enum": ["pdf", "html", "txt", "bibtex"]},
-              "title": {"type": "string"}
-            }
-          }
-        },
-
-  "required": ["ppn", "title"],
-  "definitions": {
-      "non-empty-string": {
-        "type": "string",
-        "minLength": 1
-      }
-  }
+       }
+     },
+     "volume": {
+       "type": "array",
+       "minItems": 0,
+       "maxItems": 4,
+       "description": "Quellentyp und Volumen",
+       "items": {
+         "type": "object",
+         "properties": {
+           "source": {
+             "enum": [
+               "pdf",
+               "html",
+               "txt",
+               "bibtex"
+             ]
+           },
+           "volume": {
+             "type": "string"
+           }
+         }
+       }
+     },
+     "pages": {
+       "type": "array",
+       "minItems": 0,
+       "maxItems": 4,
+       "description": "Quellentyp und Seiten",
+       "items": {
+         "type": "object",
+         "properties": {
+           "source": {
+             "enum": [
+               "pdf",
+               "html",
+               "txt",
+               "bibtex"
+             ]
+           },
+           "pages": {
+             "type": "string"
+           }
+         }
+       }
+     },
+     "year": {
+       "type": "array",
+       "minItems": 0,
+       "maxItems": 4,
+       "description": "Quellentyp und Erscheinungsjahr",
+       "items": {
+         "type": "object",
+         "properties": {
+           "source": {
+             "enum": [
+               "pdf",
+               "html",
+               "txt",
+               "bibtex"
+             ]
+           },
+           "year": {
+             "type": "string"
+           }
+         }
+       }
+     },
+     "creators": {
+       "type": "array",
+       "minItems": 0,
+       "maxItems": 4,
+       "description": "Quellentyp und Authoren",
+       "items": {
+         "type": "object",
+         "properties": {
+           "source": {
+             "enum": [
+               "pdf",
+               "html",
+               "txt",
+               "bibtex"
+             ]
+           },
+           "creators": {
+             "type": "array"
+           }
+         }
+       }
+     },
+     "text_languages": {
+       "type": "array",
+       "minItems": 0,
+       "maxItems": 4,
+       "description": "Quellentyp und Sprache des Papers",
+       "items": {
+         "type": "object",
+         "properties": {
+           "source": {
+             "enum": [
+               "pdf",
+               "html",
+               "txt",
+               "bibtex"
+             ]
+           },
+           "text_languages": {
+             "type": "array"
+           }
+         }
+       }
+     },
+     "keywords": {
+       "type": "array",
+       "minItems": 0,
+       "description": "Schlüsselwörter für andere Paper",
+       "items": {
+         "type": "object",
+         "properties": {
+           "ppn": {
+             "$ref": "#/definitions/non-empty-string"
+           }
+         }
+       }
+     }
+   },
+     "required": [
+       "ppn",
+       "title",
+       "volume",
+       "pages",
+       "year",
+       "creators",
+       "text_languages",
+       "keywords"
+     ],
+     "definitions": {
+       "non-empty-string": {
+         "type": "string",
+         "minLength": 1
+       }
+     }
+   }
 }

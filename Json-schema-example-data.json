@@ -1,4 +1,17 @@
-{
-  "ppn": "d",
-  "title": [{"source": "bibtex", "title": "Representing and processing idioms"}]
+{"ppn": "17465734X",
+  "title":
+  [{"source": "bibtex", "title": "Representing and processing idioms"}],
+  "volume":
+  [{"source": "bibtex", "volume": "13"}],
+  "pages":
+  [{"source": "bibtex", "pages":"73-107"}],
+  "year":
+  [{"source": "bibtex", "year": "2001"}],
+  "creators":
+  [{"source": "bibtex", "creators":["Vega-Moreno, Rosa Elena"]}],
+  "text_languages":
+  [{"source": "bibtex", "text_languages" : ["eng","fra"]}],
+  "keywords":
+  [{"ppn": "133072029"},{"ppn": "133071952"},
+    {"ppn":"133115135"}, {"ppn": "133111644"}, {"ppn": "133081605"}]
 }
