@@ -11,7 +11,7 @@ import java.io.FileNotFoundException;
 
 public class JsonValidator {
 
-    public static void main(String[] args) throws FileNotFoundException {
+    public JSONObject validateJson(String datapath) throws FileNotFoundException {
         //json schema
         File schemaFile = new File("Json-schema-example.json");
 
@@ -19,15 +19,20 @@ public class JsonValidator {
         JSONObject jsonSchema = new JSONObject(schemaData);
 
         //json data
-        File jsonData = new File("Json-schema-example-data.json");
+        File jsonData = new File(datapath);
         JSONTokener jsonDataFile = new JSONTokener(new FileInputStream(jsonData));
         JSONObject jsonObject = new JSONObject(jsonDataFile);
 
         //validate schema
         Schema schemaValidator = SchemaLoader.load(jsonSchema);
         schemaValidator.validate(jsonObject);
-        System.out.println(jsonObject.get("title"));
+        return jsonObject;
+    }
 
+    public static void main(String[] args) throws FileNotFoundException {
+        JsonValidator validator = new JsonValidator();
+        JSONObject jsonObject = validator.validateJson("Json-schema-example-data.json");
+        System.out.println(jsonObject.get("title"));
     }
 
 
