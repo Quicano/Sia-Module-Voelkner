@@ -20,13 +20,84 @@
                     "title": {"type": "string"}
                 }
             }
+         },
+
+         "volume": {
+           "type": "array",
+           "minItems": 0,
+           "maxItems": 4,
+           "description": "Quellentyp und Volumen",
+           "items": {
+             "type": "object",
+             "properties": {
+               "source": {"enum": ["pdf", "html", "txt", "bibtex"]},
+               "title": {"type": "string"}
+             }
+           }
+         },
+
+         "pages": {
+           "type": "array",
+           "minItems": 0,
+           "maxItems": 4,
+           "description": "Quellentyp und Seiten",
+           "items": {
+             "type": "object",
+             "properties": {
+               "source": {"enum": ["pdf", "html", "txt", "bibtex"]},
+               "title": {"type": "string"}
+             }
+           }
          }
-   },
-   "required": ["ppn", "title"],
+        },
+
+        "year": {
+          "type": "array",
+          "minItems": 0,
+          "maxItems": 4,
+          "description": "Quellentyp und Erscheinungsjahr",
+          "items": {
+            "type": "object",
+            "properties": {
+              "source": {"enum": ["pdf", "html", "txt", "bibtex"]},
+              "title": {"type": "string"}
+            }
+          }
+        },
+
+        "creators": {
+          "type": "array",
+          "minItems": 0,
+          "maxItems": 4,
+          "description": "Quellentyp und Authoren",
+          "items": {
+            "type": "object",
+            "properties": {
+              "source": {"enum": ["pdf", "html", "txt", "bibtex"]},
+              "title": {"type": "string"}
+            }
+          }
+        },
+
+        "text_languages": {
+          "type": "array",
+          "minItems": 0,
+          "maxItems": 4,
+          "description": "Quellentyp und Sprache des Papers",
+          "items": {
+            "type": "object",
+            "properties": {
+              "source": {"enum": ["pdf", "html", "txt", "bibtex"]},
+              "title": {"type": "string"}
+            }
+          }
+        },
+
+  "required": ["ppn", "title"],
   "definitions": {
-    "non-empty-string": {
-      "type": "string",
-      "minLength": 1
-    }
+      "non-empty-string": {
+        "type": "string",
+        "minLength": 1
+      }
   }
 }
