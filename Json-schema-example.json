@@ -5,9 +5,8 @@
    "title": "Person",
    "type": "object",
    "properties": {
-         "ppn": {
-              "type": "string",
-              "description": "Der Titel des Papers"
+         "ppn": {"$ref": "#/definitions/non-empty-string",
+           "description": "Der Titel des Papers"
          },
          "title": {
             "type": "array",
@@ -23,5 +22,11 @@
             }
          }
    },
-   "required": ["ppn", "title"]
+   "required": ["ppn", "title"],
+  "definitions": {
+    "non-empty-string": {
+      "type": "string",
+      "minLength": 1
+    }
+  }
 }
