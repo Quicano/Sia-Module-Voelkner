@@ -6,20 +6,22 @@
    "type": "object",
    "properties": {
          "ppn": {
-            "type": "string",
-            "description": "Der Titel des Papers"
+              "type": "string",
+              "description": "Der Titel des Papers"
          },
          "title": {
             "type": "array",
+            "minItems": 0,
+            "maxItems": 4,
             "description": "Quellentyp und Titel",
             "items": {
-               "type": "object",
+                "type": "object",
                 "properties": {
-                  "source": {"enum": ["pdf", "html", "txt", "bibtex"]},
-                  "title": {"type": "string"}
+                    "source": {"enum": ["pdf", "html", "txt", "bibtex"]},
+                    "title": {"type": "string"}
                 }
             }
          }
    },
-   "required": ["ppn"]
+   "required": ["ppn", "title"]
 }
